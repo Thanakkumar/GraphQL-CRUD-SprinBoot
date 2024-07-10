@@ -1,0 +1,22 @@
+input BookDetails{
+	title:String,
+	author:String
+}
+
+type Book{
+    id:ID,
+	title:String,
+	author:String
+}
+
+type Query{
+    getAllBooks:[Book]
+	getBookById(id:ID):Book
+}
+
+# The Root Mutation for the application
+type Mutation {
+    deleteBook(id: ID) : String
+	updateBook(id: ID, bookDetails: BookDetails): Book
+	createBook(bookDetails: BookDetails): Book
+}
